@@ -1,0 +1,18 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# An example controller showing a sample home page
+GET     /                           controllers.HomeController.index
+
+
+#Bank transactions
+GET       /balance/:accountNumber                 v1.controllers.BankAccountController.balance(accountNumber: String)
+
+PATCH     /withdrawal/:accountNumber/:amount      v1.controllers.BankAccountController.withdraw(accountNumber: String,amount:String)
+
+PATCH     /deposit/:accountNumber/:amount         v1.controllers.BankAccountController.deposit(accountNumber: String,amount:String)
+
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(file)
